@@ -19,7 +19,7 @@ func main() {
 }
 
 func run() {
-  fmt.Printf("running %v\n ", os.Args[2:])
+  fmt.Printf("running %v as PID %d\n ", os.Args[2:], os.Getpid())
   cmd := exec.Command(os.Args[2], os.Args[3:]...)
   cmd.Stdin = os.Stdin
   cmd.Stdout = os.Stdout
