@@ -41,6 +41,7 @@ func child() {
 
   must(syscall.Chroot("/data/Projects/containers_from_scratch/new_fs"))
   must(os.Chdir("/"))
+  must(syscall.Mount("proc", "proc", "proc", 0, ""))
   must(cmd.Run())
 }
 
