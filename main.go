@@ -39,6 +39,8 @@ func child() {
   cmd.Stdout = os.Stdout
   cmd.Stderr = os.Stderr
 
+  must(syscall.Chroot("/data/Projects/containers_from_scratch/new_fs"))
+  must(os.Chdir("/"))
   must(cmd.Run())
 }
 
