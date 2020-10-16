@@ -40,6 +40,7 @@ func child() {
   cmd.Stderr = os.Stderr
 
   must(syscall.Chroot("/data/Projects/containers_from_scratch/new_fs"))
+  must(syscall.Sethostname([]byte("container")))
   must(os.Chdir("/"))
   must(syscall.Mount("proc", "proc", "proc", 0, ""))
   must(cmd.Run())
